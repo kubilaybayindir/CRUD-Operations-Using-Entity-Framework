@@ -14,13 +14,12 @@ namespace CRUD_Operations_Using_Entity_Framework
     
     public partial class Product
     {
-  
         public int Id { get; set; }
         public string ProductName { get; set; }
         public string Brand { get; set; }
         public Nullable<short> Stock { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<bool> State { get; set; }
-        public Nullable<int> CategoryId { get; set; } 
+        public Nullable<int> CategoryId { get; set; }
     }
 }

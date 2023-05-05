@@ -18,5 +18,6 @@ namespace CRUD_Operations_Using_Entity_Framework
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
         public string City { get; set; }
+        public Nullable<bool> State { get; set; }
     }
 }

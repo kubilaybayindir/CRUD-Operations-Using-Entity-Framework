@@ -12,6 +12,8 @@ namespace CRUD_Operations_Using_Entity_Framework
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class EFProductDBEntities : DbContext
     {
@@ -29,5 +31,10 @@ namespace CRUD_Operations_Using_Entity_Framework
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Sales> Sales { get; set; }
+    
+        public virtual ObjectResult<string> GETBRAND()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GETBRAND");
+        }
     }
 }

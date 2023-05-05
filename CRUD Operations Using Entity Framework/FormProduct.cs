@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +34,24 @@ namespace CRUD_Operations_Using_Entity_Framework
 
         private void BtList_Click(object sender, EventArgs e)
         {
-            DgvProducts.DataSource = db.Product.ToList();
+            var categories = (from x in db.Category
+                              select new
+                              {
+                                  x.Id,
+                                  x.Name
+                              }).ToList();
+            var asd = categories.Find(a => a.Id == 2002).Name;
+            DgvProducts.DataSource = (from x in db.Product
+                                      select new
+                                      {
+                                          x.Id,
+                                          x.ProductName,
+                                          x.Brand,
+                                          x.Stock,
+                                          x.Price,
+                                          x.CategoryId,
+                                          x.State
+                                      }).ToList();
             ClearCursors();
         }
 

@@ -14,11 +14,10 @@ namespace CRUD_Operations_Using_Entity_Framework
     
     public partial class Sales
     {
-
         public int Id { get; set; }
         public Nullable<int> ProductId { get; set; }
         public Nullable<int> CustomerId { get; set; }
         public Nullable<decimal> Price { get; set; }
-        public Nullable<System.DateTime> Date { get; set; } 
+        public Nullable<System.DateTime> Date { get; set; }
     }
 }

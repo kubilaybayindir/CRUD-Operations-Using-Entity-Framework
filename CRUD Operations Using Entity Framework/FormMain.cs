@@ -28,5 +28,11 @@ namespace CRUD_Operations_Using_Entity_Framework
             FormProduct formProduct = new FormProduct();
             formProduct.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormStatistics formStatistics = new FormStatistics();
+            formStatistics.Show();
+        }
     }
 }
